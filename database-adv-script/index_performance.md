@@ -34,7 +34,7 @@ CREATE INDEX idx_booking_property_id ON Booking(property_id);
 CREATE INDEX idx_booking_user_id ON Booking(user_id);
 
 -- Re-analyze performance after indexing
-EXPLAIN SELECT * FROM Booking WHERE user_id='u1';
+EXPLAIN ANALYZE SELECT * FROM Booking WHERE user_id='u1';
 `
 
 # 📈 Performance Measurement (Using EXPLAIN)
@@ -57,7 +57,7 @@ Reduced query execution cost and improved performance for the lookup.
 
 - Use indexing strategically by analyzing query patterns and execution plans.
 
-- EXPLAIN is a powerful tool to validate and monitor performance improvements.
+- EXPLAIN ANALYZE is a powerful tool to validate and monitor performance improvements.
 
 # 👨‍💻 Recommendation
 Continue to monitor query performance in real scenarios and consider adding composite indexes if multiple columns are regularly queried together. Use ANALYZE, EXPLAIN, or database profiling tools to guide further optimization.
